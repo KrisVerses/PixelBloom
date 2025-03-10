@@ -1,8 +1,10 @@
 import React from "react";
+import Searchbar from "../Searchbar/Searchbar";
 
 const Navbar: React.FC = () => {
   return (
-    <nav>
+    <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
+      <h1 className="text-2xl">PixelBloom</h1>
       <ul className="flex space-x-4">
         <li>
           <a href="/" className="text-white">
@@ -20,6 +22,7 @@ const Navbar: React.FC = () => {
           </a>
         </li>
       </ul>
+      <Searchbar />
     </nav>
   );
 };
