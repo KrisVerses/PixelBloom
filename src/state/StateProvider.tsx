@@ -7,9 +7,11 @@ const StateProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [images, setImages] = useState<any[]>([]);
+  const [query, setQuery] = useState<string>("");
+  const [page, setPage] = useState<number>(2);
 
   const handleSearch = async (query: string) => {
-    searchImages(query).then((images) => {
+    searchImages(query, page).then((images) => {
       setImages(images.results);
     });
   };
@@ -20,6 +22,10 @@ const StateProvider: React.FC<{ children: React.ReactNode }> = ({
     images,
     setImages,
     handleSearch,
+    query,
+    setQuery,
+    page,
+    setPage,
   };
   return (
     // StateContext.Provider is used to provide the state to the children components

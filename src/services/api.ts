@@ -16,9 +16,9 @@ export const getRandomImages = async (count: number) => {
 };
 
 //
-export const searchImages = async (query: string) => {
+export const searchImages = async (query: string, page: number) => {
   const response = await axios.get(
-    `https://api.unsplash.com/search/photos?query=${query}&per_page=25`,
+    `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=25`,
     {
       headers: {
         Authorization: accessKey ? `Client-ID ${accessKey}` : "",
