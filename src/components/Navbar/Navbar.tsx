@@ -1,6 +1,5 @@
 import React from "react";
 import Searchbar from "../Searchbar/Searchbar";
-import "./Navbar.css"; // Import your CSS file for custom styles
 
 const Navbar: React.FC = () => {
   return (

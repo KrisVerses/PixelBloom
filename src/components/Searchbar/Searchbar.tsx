@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { StateContext } from "../../context/StateContext";
 
 const Searchbar: React.FC = () => {
-  const [query, setQuery] = useState<string>("");
-  const { handleSearch } = useContext(StateContext);
+  const { handleSearch, query, setQuery } = useContext(StateContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -20,9 +19,7 @@ const Searchbar: React.FC = () => {
           value={query}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              console.log("Search for", query);
               handleSearch(query);
-              setQuery("");
             }
           }}
         />
