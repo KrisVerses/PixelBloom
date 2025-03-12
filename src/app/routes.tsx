@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Layout from "../components/Layout";
+import ImageDetail from "../pages/ImageDetail";
 // import Gallery from "./components/Gallery";
 // import About from "./components/About";
 
@@ -14,8 +15,7 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      {/* <Route path="/gallery" element={<Gallery />} />
-      <Route path="/about" element={<About />} /> */}
+      <Route path="/image/:slug" element={<ImageDetail />} />
     </Route>
   )
 );
